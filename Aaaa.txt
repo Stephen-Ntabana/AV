@@ -1,0 +1,29 @@
+avg_scores = [df["Math_Score"].mean(), df["Science_Score"].mean()]
+subjects = ["Math", "Science"]
+
+plt.bar(subjects, avg_scores, color=["blue", "green"])
+plt.title("Average Scores")
+plt.ylabel("Average Marks")
+plt.show()
+
+plt.scatter(df["Math_Score"], df["Science_Score"], color='red')
+plt.title("Math vs Science Score")
+plt.xlabel("Math Score")
+plt.ylabel("Science Score")
+plt.show()
+
+plt.hist(df["Math_Score"], bins=5, color='purple')
+plt.title("Distribution of Math Scores")
+plt.xlabel("Math Score")
+plt.ylabel("Frequency")
+plt.show()
+
+gender_counts = df["Gender"].value_counts()
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%')
+plt.title("Gender Distribution")
+plt.show()
+
+plt.boxplot([df["Math_Score"], df["Science_Score"]], labels=["Math", "Science"])
+plt.title("Score Comparison")
+plt.ylabel("Marks")
+plt.show()
